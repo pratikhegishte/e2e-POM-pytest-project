@@ -32,6 +32,13 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y google-chrome-stable
 
-    - name: Run Tests
+    - name: Run Pytest and generate HTML Report
       run: |
-        pytest --maxfail=1 --disable-warnings -v
+        mkdir -p reports
+        pytest --html=reports/report.html --self-contained-html --maxfail=1 --disable-warnings -v
+
+    - name: Upload HTML report
+      uses: actions/upload-artifact@v3
+      with:
+        name: html-report
+        path: reports/report.html
