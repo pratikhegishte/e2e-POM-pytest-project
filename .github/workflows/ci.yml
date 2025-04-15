@@ -2,8 +2,8 @@ name: Run Selenium Pytest Tests
 
 on:
   workflow_dispatch:     # ✅ enables manual trigger via GitHub UI
-  schedule:
-    - cron: '0 0 * * *'  # ✅ scheduled daily at midnight (UTC)
+#  schedule:
+#    - cron: '0 0 * * *'  # ✅ scheduled daily at midnight (UTC)
 
 jobs:
   test:
